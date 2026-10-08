@@ -1,0 +1,48 @@
+{
+  "name": "sade-calendar",
+  "version": "1.0.0",
+  "main": "index.ts",
+  "dependencies": {
+    "@react-native-community/datetimepicker": "9.1.0",
+    "@react-native-community/netinfo": "12.0.1",
+    "@react-native-google-signin/google-signin": "^16.1.5",
+    "expo": "~57.0.27",
+    "expo-crypto": "~57.0.3",
+    "expo-dev-client": "~57.0.19",
+    "expo-localization": "~57.0.2",
+    "expo-secure-store": "~57.0.4",
+    "expo-sqlite": "~57.0.4",
+    "expo-status-bar": "~57.0.1",
+    "expo-system-ui": "~57.0.4",
+    "react": "19.2.3",
+    "react-native": "0.86.3",
+    "react-native-safe-area-context": "~5.7.0",
+    "rrule": "^2.8.1",
+    "zustand": "^5.0.15"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@types/node": "^26.6.4",
+    "@types/react": "~19.2.2",
+    "eslint": "^10.12.0",
+    "prettier": "^3.9.9",
+    "typescript": "~6.0.3",
+    "typescript-eslint": "^8.71.1",
+    "vitest": "^5.0.3"
+  },
+  "scripts": {
+    "start": "expo start --dev-client",
+    "android": "bash scripts/android-env.sh npx expo run:android",
+    "ios": "expo run:ios",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint .",
+    "test": "vitest run",
+    "prebuild": "expo prebuild --platform android",
+    "build:apk": "bash scripts/android-env.sh bash -c \"cd android && ./gradlew assembleRelease\"",
+    "build:aab": "bash scripts/android-env.sh bash -c \"cd android && ./gradlew bundleRelease\"",
+    "build:debug": "bash scripts/android-env.sh bash -c \"cd android && ./gradlew assembleDebug\"",
+    "format": "prettier --write App.tsx app.config.ts src tests plugins package.json tsconfig.json",
+    "build:test-apk": "bash scripts/android-env.sh bash scripts/build-test-apk.sh"
+  },
+  "private": true
+}

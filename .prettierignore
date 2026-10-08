@@ -1,0 +1,7 @@
+node_modules
+android
+ios
+.local
+dist
+.env*
+package-lock.json
